@@ -1,0 +1,23 @@
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.MySQL5Dialect
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    javax:
+      persistence:
+        schema-generation:
+          database:
+            action: create
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/notes
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  main:
+    allow-circular-references: true
+
+# spring.main.allow-circular-references
+#spring.jpa.show-sql: true
